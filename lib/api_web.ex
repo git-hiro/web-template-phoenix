@@ -28,7 +28,7 @@ defmodule ApiWeb do
 
   def view do
     quote do
-      use Phoenix.View, root: "src/api_web/templates",
+      use Phoenix.View, root: "lib/api_web/templates",
                         namespace: ApiWeb
 
       # Import convenience functions from controllers
