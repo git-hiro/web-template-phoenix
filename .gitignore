@@ -1,0 +1,11 @@
+# directories
+/_build
+/db
+/deps
+
+# files
+.DS_Store
+/config/*.secret.exs
+/*.ez
+erl_crash.dump
+
