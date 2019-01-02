@@ -1,5 +1,7 @@
 #! /bin/ash
 
+cd phoenix
+
 # deps
 mix deps.get
 mix deps.compile
