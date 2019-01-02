@@ -2,7 +2,7 @@ version: '3.6'
 
 services:
   phoenix:
-    container_name: phoenix
+    container_name: api_phoenix
     build:
       context: ./
       dockerfile: ./tools/docker/phoenix/Dockerfile
