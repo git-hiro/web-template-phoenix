@@ -1,37 +1,30 @@
 version: '3.6'
 
 services:
-
-  workspace:
-    container_name: wss
-    build: docker/workspace/
-    tty: true
-    volumes:
-      - ${BASE_DIR}/:/workspace
-    networks:
-      - backend
-
   phoenix:
     container_name: phoenix
-    build: docker/phoenix/
+    build:
+      context: ./
+      dockerfile: ./tools/docker/phoenix/Dockerfile
     ports:
-      - "4000:4000"
+      - '4000:4000'
     volumes:
       - ${BASE_DIR}/:/var/www
     networks:
       - backend
 
   database:
-    container_name: postgresql
-    image: postgres:9-alpine
+    container_name: api_phoenix_db
+    image: postgres:11-alpine
     ports:
-      - "5432:5432"
+      - '5432:5432'
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: postgres
     volumes:
       - postgresql_data:/var/lib/postgresql/data
+      - ./tools/sql:/docker-entrypoint-initdb.d
     networks:
       - backend
 
