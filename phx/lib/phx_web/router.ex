@@ -11,6 +11,10 @@ defmodule PhxWeb.Router do
     resources "/helloworld", HelloworldController, only: [:index]
   end
 
+  scope "/api/swagger" do
+    forward "/", PhoenixSwagger.Plug.SwaggerUI, otp_app: :phx, swagger_file: "swagger.json"
+  end
+
   def swagger_info do
     %{
       info: %{

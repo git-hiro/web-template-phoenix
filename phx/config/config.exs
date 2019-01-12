@@ -17,6 +17,14 @@ config :phx, PhxWeb.Endpoint,
   render_errors: [view: PhxWeb.ErrorView, accepts: ~w(json)],
   pubsub: [name: Phx.PubSub, adapter: Phoenix.PubSub.PG2]
 
+config :phx, :phoenix_swagger,
+  swagger_files: %{
+    "priv/static/swagger.json" => [
+      router: PhxWeb.Router,
+      endpoint: PhxWeb.Endpoint,
+    ]
+  }
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
