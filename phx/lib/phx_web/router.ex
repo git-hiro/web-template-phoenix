@@ -7,5 +7,16 @@ defmodule PhxWeb.Router do
 
   scope "/api", PhxWeb do
     pipe_through :api
+
+    resources "/helloworld", HelloworldController, only: [:index]
+  end
+
+  def swagger_info do
+    %{
+      info: %{
+        version: "0.9",
+        title: "ApiTemplate Phoenix"
+      }
+    }
   end
 end
