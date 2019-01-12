@@ -1,11 +1,14 @@
 FROM elixir:1.7-alpine
 
+# version
+ENV PHOENIX_VERSION="1.4.0"
+
 # install phoenix
-RUN mix archive.install --force https://github.com/phoenixframework/archives/raw/master/phx_new.ez
 RUN mix local.hex --force \
   && mix local.rebar --force
+RUN mix archive.install hex phx_new "${PHOENIX_VERSION}" --force
 
-WORKDIR /var/www
+WORKDIR /var/www/phx
 
 EXPOSE 4000
 
