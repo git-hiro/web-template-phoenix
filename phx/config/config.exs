@@ -21,7 +21,7 @@ config :phx, :phoenix_swagger,
   swagger_files: %{
     "priv/static/swagger.json" => [
       router: PhxWeb.Router,
-      endpoint: PhxWeb.Endpoint,
+      endpoint: PhxWeb.Endpoint
     ]
   }
 

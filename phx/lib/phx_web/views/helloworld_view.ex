@@ -4,5 +4,4 @@ defmodule PhxWeb.HelloworldView do
   def render("index.json", %{text: text}) do
     %{message: text}
   end
-
 end

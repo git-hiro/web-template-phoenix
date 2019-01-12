@@ -42,7 +42,7 @@ defmodule Phx.MixProject do
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix_swagger, "~> 0.8"},
       {:plug_cowboy, "~> 2.0"},
-      {:postgrex, ">= 0.0.0"},
+      {:postgrex, ">= 0.0.0"}
     ]
   end
 

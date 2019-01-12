@@ -5,12 +5,12 @@ defmodule PhxWeb.HelloworldController do
   action_fallback PhxWeb.FallbackController
 
   swagger_path :index do
-    get "/api/helloworld"
-    summary "Hello World"
-    description ""
-    produces "application/json"
-    deprecated false
-    response 200, "OK"
+    get("/api/helloworld")
+    summary("Hello World")
+    description("")
+    produces("application/json")
+    deprecated(false)
+    response(200, "OK")
   end
 
   def index(conn, _params) do
