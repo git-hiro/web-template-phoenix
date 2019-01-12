@@ -1,1 +1,1 @@
-# web-template-phoenix
+# api-template-phoenix
